@@ -48,6 +48,6 @@ public class Client {
     }
 
     public static void main(String[] args) {
-        Client client = new Client("localhost",3333);
+        Client client = new Client("192.168.1.1",3333);
     }
 }
