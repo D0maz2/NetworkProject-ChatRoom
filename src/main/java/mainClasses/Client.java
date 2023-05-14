@@ -29,13 +29,13 @@ public class Client {
         }
             //Here is where the communication happens anything you want for teh client and the server to interact together for
         String msg = "";
-//        String txt = "";
+        String txt = "";
         while(!msg.equals("!q")){
             try{
                 msg = inputStream.readLine();
                 outputStream.writeUTF(msg);
-//                txt = inputStream2.readUTF();
-//                System.out.println(txt);
+                txt = inputStream2.readUTF();
+                System.out.println(txt);
             }
             catch (IOException i){
                 System.out.println(i);

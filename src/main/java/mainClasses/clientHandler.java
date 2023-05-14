@@ -18,13 +18,13 @@ public class clientHandler extends Thread{
             DataInputStream inputStream2 = new DataInputStream(System.in);
 
             String msg = "";
-//            String txt = "";
+            String txt = "";
             while(!msg.equals("!q")){
                 try{
                     msg = inputStream.readUTF();
                     System.out.println(msg);
-//                    txt = inputStream2.readLine();
-//                    outputStream2.writeUTF(txt);
+                    txt = inputStream2.readLine();
+                    outputStream2.writeUTF(txt);
                 }
                 catch (IOException i){
                     System.out.println(i);
