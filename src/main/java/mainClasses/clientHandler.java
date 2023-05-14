@@ -14,12 +14,17 @@ public class clientHandler extends Thread{
         try {
             DataOutputStream outputStream = new DataOutputStream(clientSocket.getOutputStream());
             DataInputStream inputStream = new DataInputStream(clientSocket.getInputStream());
+            DataOutputStream outputStream2 = new DataOutputStream(clientSocket.getOutputStream());
+            DataInputStream inputStream2 = new DataInputStream(System.in);
 
             String msg = "";
+//            String txt = "";
             while(!msg.equals("!q")){
                 try{
                     msg = inputStream.readUTF();
                     System.out.println(msg);
+//                    txt = inputStream2.readLine();
+//                    outputStream2.writeUTF(txt);
                 }
                 catch (IOException i){
                     System.out.println(i);
