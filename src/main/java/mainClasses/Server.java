@@ -17,8 +17,9 @@ public class Server {
     public Server(int port) {
         try {
             //Mainly starting the connection(communication)
-            serverSocket1 = new ServerSocket(port);                        //Listen step for any input in TCP port 3333
+            serverSocket1 = new ServerSocket(port);                        //Listen step for any input in TCP port
             System.out.println("Server Started");
+            //Check for every accepted socket and create a client handler with a client socket or it.
             while (true) {
                 Socket clientSocket = serverSocket1.accept();
                 // Create a new thread to handle the client connection
@@ -28,6 +29,7 @@ public class Server {
         }
         catch (IOException i){
             System.out.println(i);
+            System.out.println("line 31");
         }
     }
 
