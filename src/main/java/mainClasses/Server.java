@@ -11,6 +11,7 @@ public class Server {
     ServerSocket serverSocket1 = null;
     Socket socket1 = null;
     DataInputStream inputStream = null;
+    DataOutputStream outputStream = null;
     //DataOutputStream outputStream = null;
 
     public Server(int port) {
@@ -20,8 +21,6 @@ public class Server {
             System.out.println("Server Started");
             while (true) {
                 Socket clientSocket = serverSocket1.accept();
-                System.out.println("Client connected: " + clientSocket.getInetAddress().getHostName());
-
                 // Create a new thread to handle the client connection
                 clientHandler clientHandler = new clientHandler(clientSocket);
                 clientHandler.start();
