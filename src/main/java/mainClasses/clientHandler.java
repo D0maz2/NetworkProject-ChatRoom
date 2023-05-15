@@ -77,7 +77,7 @@ public class clientHandler extends Thread{
                     try {
                         String msg = "";
                         msg = inputStream.readUTF();
-                        System.out.println(name+": "+msg);
+                        broadcast(name+": "+msg);
                     } catch (IOException i){
                         System.out.println(i);
                     }
