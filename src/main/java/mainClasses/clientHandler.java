@@ -57,11 +57,11 @@ public class clientHandler extends Thread{
     }
 
     public void broadcast(String msg) {
-        for (clientHandler clients : clients) {
+        for (clientHandler client : clients) {
             try {
-                if (!clients.name.equals(name)) {
-                    clients.outputStream2.writeUTF(msg);
-                    clients.outputStream2.flush();
+                if (!client.name.equals(name)) {
+                    client.outputStream2.writeUTF(msg);
+                    client.outputStream2.flush();
 
                 }
             } catch (IOException i) {
