@@ -17,17 +17,18 @@ public class clientHandler extends Thread{
         this.clientSocket = socket;
         clients.add(this);
         try {
+            inputStream = new DataInputStream(clientSocket.getInputStream());
             this.name=inputStream.readUTF();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+
         broadcast("[Server] "+name+" has joined the lobby.");
     }
 
     public void run() {
         try {
             //outputStream = new DataOutputStream(clientSocket.getOutputStream());
-            inputStream = new DataInputStream(clientSocket.getInputStream());
             outputStream2 = new DataOutputStream(clientSocket.getOutputStream());
             inputStream2 = new DataInputStream(System.in);
 
@@ -76,7 +77,7 @@ public class clientHandler extends Thread{
                     try {
                         String msg = "";
                         msg = inputStream.readUTF();
-                        System.out.println(name+" "+msg);
+                        System.out.println(name+": "+msg);
                     } catch (IOException i){
                         System.out.println(i);
                     }

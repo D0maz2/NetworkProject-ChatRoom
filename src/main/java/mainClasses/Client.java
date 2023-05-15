@@ -44,7 +44,7 @@ public class Client {
                 //                System.out.println(txt);
                 listenerThread();
                 msg = inputStream.readLine();
-                outputStream.writeUTF(name+": "+msg);
+                outputStream.writeUTF(msg);
                 outputStream.flush();
             }
             catch (IOException i){
